@@ -1,21 +1,18 @@
-import { useState } from "react";
-import { Button } from "./components/ui/button";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeLayout from "./components/layout/HomeLayout";
+import Home from "./pages/static/Home";
+import Login from "./pages/static/Login";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="">
-      <Button
-        variant="main"
-        className="w-full"
-        onClick={() => setCount(count + 1)}
-      >
-        Click Me
-      </Button>
-      <h1>Welcome</h1>
-      <p className=" text-3xl">Current Count: {count}</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
