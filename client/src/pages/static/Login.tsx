@@ -4,12 +4,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { UserLogin } from "@/interfaces/user_interfaces";
 import InputError from "@/components/ui/input_error";
 import { toast } from "sonner";
 const Login = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -28,10 +30,13 @@ const Login = () => {
       <div className="container mx-auto">
         <div className="w-full sm:w-3/5 md:w-1/2 xl:w-2/5 2xl:w-1/3 mx-auto">
           <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
-            <Link to="/" className=" flex items-center gap-1 text-gray-500">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-1 text-gray-500"
+            >
               <IoIosArrowRoundBack className="text-2xl text-gray-500" />
               Back
-            </Link>
+            </button>
           </div>
           <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
             <h1 className="mb-1 text-3xl text-gray-700">Sign in</h1>

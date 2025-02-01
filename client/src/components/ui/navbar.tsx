@@ -20,7 +20,7 @@ const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   ));
 
   return (
-    <nav className="py-3.5 md:py-6 lg:py-8 bg-gray-100 w-full relative">
+    <nav className="py-3.5 md:py-6 lg:py-8 bg-gray-200/80 w-full relative">
       <div className="container mx-auto">
         <div className="md:hidden absolute top-5">
           <GiHamburgerMenu
@@ -29,7 +29,7 @@ const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           />
         </div>
         <div className="flex md:justify-between justify-center items-center">
-          <Link to="/" className="text-3xl text-blue-600 font-sf_bold">
+          <Link to="/" className="text-4xl text-blue-600 font-sf_bold">
             MediSync
           </Link>
 
@@ -38,12 +38,14 @@ const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           <div className="gap-2 md:flex hidden">
             <Link
               to="/register"
-              className={`${buttonVariants({ variant: "outline" })} `}
+              className={`${buttonVariants({
+                variant: "outline",
+              })}  !text-base`}
             >
               Register
             </Link>
             <Link
-              className={`${buttonVariants({ variant: "main" })}`}
+              className={`${buttonVariants({ variant: "main" })} !text-base`}
               to="/login"
             >
               Login
