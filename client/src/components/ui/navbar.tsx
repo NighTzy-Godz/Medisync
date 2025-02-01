@@ -20,7 +20,7 @@ const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   ));
 
   return (
-    <nav className="py-3.5 md:py-5 px-3 bg-gray-100 w-full relative">
+    <nav className="py-3.5 md:py-6 lg:py-8 bg-gray-100 w-full relative">
       <div className="container mx-auto">
         <div className="md:hidden absolute top-5">
           <GiHamburgerMenu
