@@ -16,7 +16,7 @@ const Login = () => {
     formState: { errors },
   } = useForm<UserLogin>();
 
-  const handleFormSubmit = (data: UserLogin) => {
+  const handleFormSubmit = () => {
     toast.success("Login successful", {
       position: "top-center",
       duration: 3000,
